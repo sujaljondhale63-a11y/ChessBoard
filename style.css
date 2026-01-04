@@ -17,8 +17,11 @@ body {
 }
 
 .square {
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  cursor: pointer;
 }
 
 .white {
@@ -27,4 +30,12 @@ body {
 
 .black {
   background-color: #769656;
+}
+
+.white-piece {
+  color: #ffffff;
+}
+
+.black-piece {
+  color: #000000;
 }

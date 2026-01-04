@@ -1,14 +1,14 @@
 const chessboard = document.querySelector(".chessboard");
 
 const pieces = [
-  "♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜", // black back rank
-  "♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟", // black pawns
-  "", "", "", "", "", "", "", "",
-  "", "", "", "", "", "", "", "",
-  "", "", "", "", "", "", "", "",
-  "", "", "", "", "", "", "", "",
-  "♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙", // white pawns
-  "♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"  // white back rank
+  "♜","♞","♝","♛","♚","♝","♞","♜",
+  "♟","♟","♟","♟","♟","♟","♟","♟",
+  "","","","","","","","",
+  "","","","","","","","",
+  "","","","","","","","",
+  "","","","","","","","",
+  "♙","♙","♙","♙","♙","♙","♙","♙",
+  "♖","♘","♗","♕","♔","♗","♘","♖"
 ];
 
 for (let row = 0; row < 8; row++) {
@@ -16,7 +16,7 @@ for (let row = 0; row < 8; row++) {
     const square = document.createElement("div");
     square.classList.add("square");
 
-    // coloring (already in your CSS logic)
+    // Square color
     if ((row + col) % 2 === 0) {
       square.classList.add("white");
     } else {
@@ -25,6 +25,10 @@ for (let row = 0; row < 8; row++) {
 
     const index = row * 8 + col;
     square.textContent = pieces[index];
+
+    // Piece color
+    if (index < 16) square.classList.add("black-piece");
+    if (index >= 48) square.classList.add("white-piece");
 
     chessboard.appendChild(square);
   }
